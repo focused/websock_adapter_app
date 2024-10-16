@@ -3,7 +3,7 @@ defmodule MyApp.WSClient do
 
   @endpoint "ws://localhost:4000/ws"
 
-  def start_link(state) do
+  def start_link(state \\ %{}) do
     WebSockex.start_link(@endpoint, __MODULE__, state, name: __MODULE__)
   end
 
